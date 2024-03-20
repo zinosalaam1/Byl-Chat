@@ -38,7 +38,7 @@ Certifique-se de ter os seguintes pré-requisitos instalados em sua máquina:
 
 ### 4. Execute o servidor:
 
-```python manage.py runserver```
+```python manage.py runserver 192.168.1.16:8000```
 
 ## Crie, gerencie e converse em tempo real em canais usando o Insight Sphere
 
