@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/user.css'%}">
-    <title>Insight Sphere | {{ owner.username }} </title>
+    <title>Beyond Limit | {{ owner.username }} </title>
     <link rel="icon" href="{% static 'assets/img/512logo.png' %}?v1" type="image/x-icon">
 </head>
 <body>
@@ -16,21 +16,23 @@
             <div id="infos">
                 <h1>{{owner.apelido}}</h1>
                 <h1>{{owner.username}}</h1>
-                <p>Fez login pela ultima vez em {{owner.join}}</p>
-                <p>Entrou em {{owner.join}}</p>
+                <p>
+                    Last logged in at {{owner.join}}</p>
+                <p>Enter to{{owner.join}}</p>
             </div>
 
             <div>
                 
                 {% if owner.staff %}
-                <p>Este usuario faz parte da equipe de desenvolvimento da Insight Sphere</p>
+                <p>This user is part of the development team at Beyond Limit</p>
                 {%endif%}
-                <a href="/menu" id="back">Retornar ao Menu</a>
+                <a href="/menu" id="back">Return to Menu</a>
             </div>
         </div>
 
         <div id="menu-channels">
-            <h1>Todos os canais de {{owner.apelido}}</h1>
+            <h1>All channels
+                {{owner.apelido}}</h1>
 
             <div id="channels">
                 
@@ -44,7 +46,7 @@
                             <img src="{% static 'assets/img/verificado.png' %}" id="verific" alt="verificado">
                             {% endif %}
                         </div>
-                        <a href="{% url 'channel_detail' channel.creator.username channel.id %}" id="entrarr">Entrar </a>
+                        <a href="{% url 'channel_detail' channel.creator.username channel.id %}" id="entrarr">Enter </a>
                     </div>
                 {%else%}
                 <div id="channell">
@@ -56,7 +58,7 @@
                             {% endif %}
                         </div>
                         
-                        <a href="{% url 'channel_detail' channel.creator.username channel.id %}" id="entrarr">Entrar </a>
+                        <a href="{% url 'channel_detail' channel.creator.username channel.id %}" id="entrarr">Enter </a>
                     </div>
                 {% endif %}
 
@@ -67,11 +69,11 @@
                         
                         {% if channel.creator == request.user %}
                         <p>{{channel.description}} </p>
-                        <p id="made">Criado por Você</p>
+                        <p id="made">Created by You</p>
                         <a href="{% url 'delete' channel_id=channel.id %}" id="delete">Deletar</a>
                         {% else %}
                         <p>{{channel.description}} </p>
-                        <p id="made">Criado por <a href="/@{{ channel.creator.username }}">@{{ channel.creator.username }} </a></p>
+                        <p id="made">Created by <a href="/@{{ channel.creator.username }}">@{{ channel.creator.username }} </a></p>
                         {% endif %}
                     
                     </div>

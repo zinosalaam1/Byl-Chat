@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/anonim.css' %}">
-    <title>Insight Sphere - Login</title>
+    <title>Beyond Limit - Login</title>
     <link rel="icon" href="{% static 'assets/img/512logo.png' %}?v1" type="image/x-icon">
 </head>
 <body>
@@ -16,9 +16,10 @@
                 {% csrf_token %}
                 
                 <input type="text"  name="apelido" placeholder="Apelido (Opcional)" id="apelido" autocomplete="off">
-                <button type="submit">Entrar agora</button>
+                <button type="submit">Login now</button>
     
-                <p id="terms">Ao entrar como anonimo você está ciente dos termos e sabe dos riscos de estar anonimo.</p>
+                <p id="terms">
+                    By logging in anonymously you are aware of the terms and know the risks of being anonymous.</p>
             </form>
 
             

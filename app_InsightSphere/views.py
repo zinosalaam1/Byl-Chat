@@ -75,7 +75,7 @@ class NewAcc(View):
     pross = True
     pross2 = False
     error = None
-    sit = 'Vamos criar sua conta!'
+    sit = 'Lets Create your Account!'
 
     def get(self, request):
         return render(request, 'account/newacc.html', {'pross': self.pross,
@@ -89,19 +89,19 @@ class NewAcc(View):
             username = request.POST.get('username', '')
             email = request.POST.get('email', '')
             if not username or not email:
-                self.error = 'Todos os campos devem ser preenchidos!'
+                self.error = 'All fields must be filled!'
             elif ' ' in username:
-                self.error = 'O nome de usuário não pode conter espaços'
+                self.error = 'Username cannot contain spaces'
             elif len(username) <= 3:
-                self.error = 'O nome de usuário deve ter pelo menos 4 caracteres!'
+                self.error = 'Username must be at least 4 characters long!'
             elif username.count('_') > 2 or username.count('.') > 2:
-                self.error = 'O nome de usuário não pode ter mais de dois _ ou .'
+                self.error = 'The username cannot have more than two _ or .'
             elif not re.match(r'^[a-zA-Z0-9_.]+$', username):
-                self.error = 'O nome de usuário deve conter apenas letras, números, _, ou .'
+                self.error = 'The username must contain only letters, numbers, _, or.'
             elif User.objects.filter(username=username).exists():
-                self.error = 'Já existe um usuário com esse nome de usuário :/'
+                self.error = 'A user with this username already exists :/'
             elif User.objects.filter(email=email).exists():
-                self.error = 'Este e-mail já está associado a uma conta!'
+                self.error = 'This email is already associated with an account!'
             else:
                 self.sit = ''
                 self.pross2 = True

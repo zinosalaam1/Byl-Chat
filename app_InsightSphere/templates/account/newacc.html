@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/newacc.css' %}?v=1">
-    <title>Insight Sphere - Crie sua conta</title>
+    <title>Beyond Limit - Create your account</title>
     <link rel="icon" href="{% static 'assets/img/512logo.png' %}?v1" type="image/x-icon">
 </head>
 <body>
@@ -20,22 +20,22 @@
             <form method="post" name="pt1" id="card-login" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="hidden" name="form_type" value="pt1">
-                <input type="text" name="username" placeholder="Digite um username" autocomplete="off" id="input-text">
-                <input type="email" name="email" placeholder="Digite seu email" autocomplete="off" id="input-text">
-                <button type="submit">Prosseguir!</button>
+                <input type="text" name="username" placeholder="Enter a username" autocomplete="off" id="input-text">
+                <input type="email" name="email" placeholder="Input your e-mai" autocomplete="off" id="input-text">
+                <button type="submit">Proceed!</button>
             </form>
             {% endif %}
             {% if pross2 %}
             <form method="post" name="pt2" id="card-login" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="hidden" name="form_type" value="pt2">
-                <input type="text" name="apelido" placeholder="Apelido" autocomplete="off" id="input-text">
-                <input type="password" name="password" autocomplete="off" placeholder="Senha" id="input-text">
-                <input type="password" name="password2" autocomplete="off" placeholder="Repita sua senha" id="input-text">
-                <button type="submit">Criar minha conta</button>
+                <input type="text" name="apelido" placeholder="Surname" autocomplete="off" id="input-text">
+                <input type="password" name="password" autocomplete="off" placeholder="Password" id="input-text">
+                <input type="password" name="password2" autocomplete="off" placeholder="Repeat your password" id="input-text">
+                <button type="submit">Create my account</button>
             </form>
             {% endif %}
-            <p id="terms">Ao criar sua conta você concorda com nossos termos de uso.</p>
+            <p id="terms">By creating your account you agree to our terms of use.</p>
         </div>
     </div>
 </body>
